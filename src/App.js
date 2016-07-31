@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+       header: "Header from state...",
+       "content": "Content from state..."
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -13,8 +22,19 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <TextContainer textProp="Aca va un texto"/>
       </div>
     );
+  }
+}
+
+class TextContainer extends Component {
+  render () {
+    return (
+      <div className="textContainer">
+        {this.props.textProp}
+      </div>
+    )
   }
 }
 
